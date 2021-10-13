@@ -65,15 +65,16 @@ screenNumber = max(Screen('Screens'));% Set the screen to the secondary monitor
 HideCursor;
 
 % Visule angle for stimlus and fixation
-imgAngle = 16; fixOuterAngle = 0.2; fixInnerAngle = 0.1;
+videoAngle = 16; fixOuterAngle = 0.2; fixInnerAngle = 0.1;
 
 % Visual angle to pixel
 pixelPerMilimeterHor = 1024/419;
 pixelPerMilimeterVer = 768/315;
-imgPixelHor = round(pixelPerMilimeterHor * (2 * 751 * tan(imgAngle/180*pi/2)));
-imgPixelVer = round(pixelPerMilimeterVer * (2 * 751 * tan(imgAngle/180*pi/2)));
+videoPixelHor = round(pixelPerMilimeterHor * (2 * 751 * tan(videoAngle/180*pi/2)));
+videoPixelVer = round(pixelPerMilimeterVer * (2 * 751 * tan(videoAngle/180*pi/2)));
 fixOuterSize = round(pixelPerMilimeterHor * (2 * 751 * tan(fixOuterAngle/180*pi/2)));
 fixInnerSize = round(pixelPerMilimeterHor * (2 * 751 * tan(fixInnerAngle/180*pi/2)));
+
 
 % define size rect of the video frame
 dsRect = [xCenter-videoPixelHor/2, yCenter-videoPixelHor/2,...
